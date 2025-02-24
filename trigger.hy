@@ -12,8 +12,11 @@
 	(.sort dados)
 	(setv media (/ (sum dados) (len dados) ))
         (setv med (mediana dados))
+	(setv minv (min dados))
 	(setv qt1 (mediana (get dados (slice None (int(/ (len dados) 2))))))
 	(setv qt3 (mediana (get dados (slice (int(/ (len dados) 2)) None))))
+	(setv maxv (max dados))
+
 	(setv aiq (- qt3 qt1))
 	(setv [ls li] [
 			(+ med (* 1.5 aiq))
@@ -32,11 +35,11 @@
 média: {media}
 ------------------
 TEORIA DOS 5 NÚMEROS
-min: {(min dados)}
+min: {minv}
 qt1: {qt1}
 med: {med}
 qt3: {qt3}
-max: {(max dados)}
+max: {maxv}
 ------------------
 aiq: {aiq}
 ls: {ls}
@@ -50,6 +53,9 @@ dp: {dp}
 nse: {nse}
 ns: {ns}
 	")
+	(return {
+		#** media #** med
+	})
 )
 
 (setv arr  [291, 10.9, 47, 86, 44, 18.9, 1, 50, 190.4, 45.7, 28.5, 18.9, 16, 34, 8.6, 9.6])
