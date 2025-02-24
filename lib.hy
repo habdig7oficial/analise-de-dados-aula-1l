@@ -9,6 +9,7 @@
         )
 )
 (defn gera_relatorio [dados] 
+    (print f"Dataset: {dados}\n")
 	(.sort dados)
 	(setv media (/ (sum dados) (len dados) ))
         (setv med (mediana dados))
@@ -32,26 +33,27 @@
 
 
 	(print f"
-média: {media}
+Média:       {media}
 ------------------
 TEORIA DOS 5 NÚMEROS
-min: {minv}
-qt1: {qt1}
-med: {med}
-qt3: {qt3}
-max: {maxv}
+Mínimo:      {minv}
+1º Quartil:  {qt1}
+Mediana:     {med}
+3º Quartil:  {qt3}
+Máximo:      {maxv}
 ------------------
-aiq: {aiq}
-ls: {ls}
-li: {li}
+AIQ: {aiq}
+ls:  {ls}
+li:  {li}
 ------------------
-se: {se}
-s2: {s}
-dp: {dp}
+Elementos: {se}\n
+Variância:       {s}
+Desvio Padrão:   {dp}
 
 /*--------------*/
 nse: {nse}
 ns: {ns}
+\n-- FIM DO RELATÓRIO --
 	")
 	(return {
 		:media media
