@@ -19,3 +19,11 @@
 
 (.savefig plt "hello2")
 
+;;
+
+
+(setv ex3  [650, 490, 580, 450, 570,])
+(gera_relatorio ex3)
+
+
+

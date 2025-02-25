@@ -1,4 +1,5 @@
 (import math)
+(import decimal [Decimal])
 (defn mediana [dados]
 	       (if (= (% (len dados) 2) 0)
                 (/ (+
@@ -52,7 +53,7 @@ Desvio Padrão:   {dp}
 
 /*--------------*/
 nse: {nse}
-ns: {ns}
+ns: {(round (Decimal ns) 3)}
 \n-- FIM DO RELATÓRIO --
 	")
 	(return {
